@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hibernate.demo.domain.NewsTableEntity" table="news_table" schema="mydata">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="sno">
+            <column name="sno" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="char(128)" length="128" not-null="true"/>
+        </property>
+        <property name="age">
+            <column name="age" sql-type="int(128)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
