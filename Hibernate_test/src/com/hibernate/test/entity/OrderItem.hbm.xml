@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.hibernate.test.entity">
+   <class name="OrderItem" table="t_orderitem">
+     <composite-id>
+         <key-many-to-one name="product_id" class="com.hibernate.test.entity.Product">
+             <column name="product_id"/>
+         </key-many-to-one>
+         <key-many-to-one name="order_id" class="com.hibernate.test.entity.Order">
+             <column name="order_id"/>
+         </key-many-to-one>
+         <key-property name="quantity" type="integer">
+             <column name="quantity"/>
+         </key-property>
+         <key-property name="purchase" type="double">
+             <column name="purchase"/>
+         </key-property>
+     </composite-id>
+   </class>
+</hibernate-mapping>	
