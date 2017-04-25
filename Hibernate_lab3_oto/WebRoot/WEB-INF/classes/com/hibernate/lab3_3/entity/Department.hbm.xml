@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.hibernate.lab3_3.entity">
+  <class name="Department" table="department">
+    <id name="id" type="integer">
+      <generator class="foreign">
+          <param name="property">manager</param>
+      </generator>
+    </id>
+    <property name="name" type="string" not-null="true" length="12"/>
+    <one-to-one name="manager" class="Manager" cascade="persist"/>
+  </class>
+</hibernate-mapping>
