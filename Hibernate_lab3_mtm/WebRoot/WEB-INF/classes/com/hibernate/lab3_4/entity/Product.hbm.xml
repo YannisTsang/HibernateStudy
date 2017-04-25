@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.hibernate.lab3_4.entity">
+   <class name="Product" table="product">
+     <id name="id" >
+        <generator class="identity"/>
+     </id>
+     <property name="name" type="string" not-null="true" length="30"/>
+     <property name="price" type="double"/>
+     <property name="description" type="text"/>
+     <set name="orders" table="orderItem" inverse="true">
+        <key column="product_id"/>
+        <many-to-many class="com.hibernate.lab3_4.entity.Order" column="order_id"/>
+     </set>
+   </class>
+</hibernate-mapping>

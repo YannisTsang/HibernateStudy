@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.hibernate.lab3_4.entity">
+   <class name="Order" table="orders">
+      <id name="id" type="integer">
+        <generator class="identity"/>
+      </id>
+      <property name="realname" type="string" not-null="true" length="12"/>
+      <property name="phone" type="string" not-null="true" length="15"/>
+      <property name="address" type="string" not-null="true" length="50"/>
+      <property name="postcode" type="string" length="6"/>
+     
+      <property name="total" type="double"/>
+      <set name="products" table="orderItem"  fetch="join" cascade="persist">
+         <key column="order_id"/>
+         <many-to-many class="Product" column="product_id"/>
+      </set>
+   </class>
+</hibernate-mapping>	
+	
