@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	
+<hibernate-mapping package="com.hibernate.search.entity">
+   <class name="Student" table="tb_student">
+      <id name="stuNo" column="stuno" length="20"/>
+      <property name="stuPwd" column="stupwd" length="20"/>
+      <property name="stuName" column="stuname" length="20"/>
+      <property name="stuSex" column="stusex" length="20"/>
+   </class>
+</hibernate-mapping>
